@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Kloop Puzzle Game Vc-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="KloopPuzzleGameVc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8JM-mm-OcV"/>
+                        <viewControllerLayoutGuide type="bottom" id="lmf-7k-fFA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启动页" translatesAutoresizingMaskIntoConstraints="NO" id="don-DJ-usC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LKN-6G-03D">
+                                <rect key="frame" x="13" y="56" width="349" height="454"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q1A-9Y-MEE">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="upu-X1-zsl" customClass="KloopSquareCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5J8-4j-PaO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Mvc-Ca-R2w"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xq4-Qo-vtt" userLabel="操作台">
+                                <rect key="frame" x="13" y="566" width="349" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEB-ZC-yqF">
+                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="68"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bFc-cB-Bs7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJg-7V-l53">
+                                        <rect key="frame" x="179.5" y="0.0" width="169.5" height="68"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Auto">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="help:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tR1-Yb-V2Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vJg-7V-l53" secondAttribute="trailing" id="1C8-Ky-UTE"/>
+                                    <constraint firstItem="vJg-7V-l53" firstAttribute="height" secondItem="sEB-ZC-yqF" secondAttribute="height" id="8aK-0o-Ff6"/>
+                                    <constraint firstItem="vJg-7V-l53" firstAttribute="leading" secondItem="sEB-ZC-yqF" secondAttribute="trailing" constant="10" id="IG8-9T-b2j">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="sEB-ZC-yqF" firstAttribute="leading" secondItem="Xq4-Qo-vtt" secondAttribute="leading" id="Nre-cX-sYG"/>
+                                    <constraint firstItem="vJg-7V-l53" firstAttribute="top" secondItem="Xq4-Qo-vtt" secondAttribute="top" id="aRu-mJ-o7n"/>
+                                    <constraint firstItem="vJg-7V-l53" firstAttribute="width" secondItem="sEB-ZC-yqF" secondAttribute="width" id="beX-dm-Fh3"/>
+                                    <constraint firstItem="sEB-ZC-yqF" firstAttribute="top" secondItem="Xq4-Qo-vtt" secondAttribute="top" id="fKE-AK-dQC"/>
+                                    <constraint firstAttribute="bottom" secondItem="vJg-7V-l53" secondAttribute="bottom" id="fmm-yO-qf4"/>
+                                    <constraint firstAttribute="bottom" secondItem="sEB-ZC-yqF" secondAttribute="bottom" id="jIw-1o-LJP"/>
+                                    <constraint firstAttribute="height" constant="68" id="zko-YL-r4f">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fm9-NW-3uc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0si-S0-bjf">
+                                <rect key="frame" x="94.5" y="202.5" width="186" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="15C-WA-Xjh">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="0si-S0-bjf" secondAttribute="height" multiplier="1:1" id="oMw-gj-8Lq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fm9-NW-3uc" secondAttribute="bottom" id="6GO-r7-cMU"/>
+                            <constraint firstAttribute="trailing" secondItem="don-DJ-usC" secondAttribute="trailing" id="9fV-dU-bbF"/>
+                            <constraint firstItem="Xq4-Qo-vtt" firstAttribute="leading" secondItem="LKN-6G-03D" secondAttribute="leading" id="E5S-Vo-7nC"/>
+                            <constraint firstItem="don-DJ-usC" firstAttribute="top" secondItem="8JM-mm-OcV" secondAttribute="bottom" id="IRd-Ro-hw8"/>
+                            <constraint firstItem="LKN-6G-03D" firstAttribute="top" secondItem="8JM-mm-OcV" secondAttribute="bottom" constant="56" id="Jbf-dl-g6i">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="Xq4-Qo-vtt" secondAttribute="bottom" constant="33" id="JhX-Nr-YAC">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="lmf-7k-fFA" firstAttribute="top" secondItem="don-DJ-usC" secondAttribute="bottom" id="Nv3-4N-iFi"/>
+                            <constraint firstItem="0si-S0-bjf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sal-Tn-CG2"/>
+                            <constraint firstItem="Xq4-Qo-vtt" firstAttribute="trailing" secondItem="LKN-6G-03D" secondAttribute="trailing" id="Y2T-lZ-7IY"/>
+                            <constraint firstItem="fm9-NW-3uc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YXK-c0-9wD"/>
+                            <constraint firstItem="fm9-NW-3uc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eKm-xm-gld"/>
+                            <constraint firstItem="0si-S0-bjf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-38" id="gL9-uq-abS">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="LKN-6G-03D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="13" id="n66-eQ-0so">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="fm9-NW-3uc" secondAttribute="trailing" id="ne6-dx-SPt"/>
+                            <constraint firstItem="don-DJ-usC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pmt-f0-BGV"/>
+                            <constraint firstItem="Xq4-Qo-vtt" firstAttribute="top" secondItem="LKN-6G-03D" secondAttribute="bottom" constant="56" id="psY-4Y-z09">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="LKN-6G-03D" secondAttribute="trailing" constant="13" id="sRD-VF-pPM">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adapterScreen" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="autoBtn" destination="vJg-7V-l53" id="IIB-5e-uGt"/>
+                        <outlet property="bgView" destination="fm9-NW-3uc" id="34R-sB-aGk"/>
+                        <outlet property="collectionView" destination="LKN-6G-03D" id="9UN-7J-wRd"/>
+                        <outlet property="originalImg" destination="0si-S0-bjf" id="Ngx-13-dhr"/>
+                        <outlet property="randomBtn" destination="sEB-ZC-yqF" id="u3C-od-mJA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23.199999999999999" y="59.820089955022496"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="启动页" width="800" height="1162"/>
+    </resources>
+</document>
